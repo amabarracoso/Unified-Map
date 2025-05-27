@@ -15,7 +15,6 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/stylesheets.css">
 
 </head>
 
@@ -23,19 +22,19 @@
     <div class="header">
         <a href="index.html"><img src="img/slsu-logo.webp" alt="SLSU Logo"></a>
         <a href="index.html" style="text-decoration: none; font-weight: bold; color:whitesmoke;">
-        <div class="header-text">
-            <h1>Southern Luzon State University</h1>
-            <h1 class="unimap">
-                <span>U</span><span>N</span><span>I</span><span>M</span><span>A</span><span>P</span>
-            </h1>
-        </div>
+            <div class="header-text">
+                <h1>Southern Luzon State University</h1>
+                <h1 class="unimap">
+                    <span>U</span><span>N</span><span>I</span><span>M</span><span>A</span><span>P</span>
+                </h1>
+            </div>
         </a>
     </div>
 
     <div class="tool-dropdown" id="toolDropdown">
         <!-- 🔘 Toggle Button (Image-Based) -->
         <div class="tool-toggle" id="toolToggle">
-            <img src="img/dashboard.webp" alt="Grid Button" />
+            <img src="img/menu.png" alt="Grid Button" />
         </div>
 
         <!-- ⬇️ Dropdown Content -->
@@ -44,7 +43,9 @@
                 <li><a href="html/dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="#"><i class="fas fa-school"></i> Colleges</a></li>
                 <li><a href="html/feedback-form.html"><i class="fas fa-comment-alt"></i> Feedback</a></li>
-                <li><a href="#"><i class="fas fa-print"></i> Print Map</a></li>
+                <li><a href="javascript:window.print()" onclick="printMap(event)"><i class="fas fa-print"></i> Print
+                        Map</a></li>
+                <li><a href="#" onclick="shareMap()"><i class="fas fa-share-alt"></i> Share Map</a></li>
             </ul>
         </div>
     </div>
@@ -52,7 +53,7 @@
 
     <div class="user-dropdown" id="userDropdown">
         <div class="user-profile" id="userToggle">
-            <img src="img/user.webp" alt="User Profile" />
+            <img src="img/profile.png" alt="User Profile" />
         </div>
 
         <div class="dropdown-menu" id="dropdownMenu">
@@ -299,92 +300,101 @@
             </div>
             <h3 style="font-weight: bold;">Organizations</h3>
             <div class="org-info">   
-                <a href="">
+                <a href="https://www.facebook.com/slsuMain" style="text-decoration: none; color: #2b2b2b;">
                     <p>Southern Luzon State University</p>
                 </a>
-
+                <a href="https://www.facebook.com/slsuCHERM" style="text-decoration: none; color: #2b2b2b;">
                     <p>Center for Hazard and Environmental Resource Mapping (CHERM)</p>
+                </a>
+                <a href="https://www.facebook.com/slsu.pdo" style="text-decoration: none; color: #2b2b2b;">
                     <p>Planning and Development Office</p>
-                    <p>MIS-ICT Office</p>              
+                </a>
+                <a href="https://www.facebook.com/slsu.misict" style="text-decoration: none; color: #2b2b2b;">
+                    <p>MIS-ICT Office</p>
+                </a>
+                </div>
             </div>
-          </div>
-      
-          <div class="contact-info">
-            <h3 style="font-weight: bold;">Contact Us</h3>
-            <ul>
-              <li>
-                <a href="https://www.facebook.com/slsuMain" target="_blank">
-                  <i class="fab fa-facebook"></i> Facebook
-                </a>
-              </li>
-              <li>
-                <a href="https://mail.google.com/mail/u/0/">
-                  <i class="fas fa-envelope"></i> Gmail
-                </a>
-              </li>
-              <li>
-                <a href="https://www.slsu.edu.ph/" target="_blank">
-                  <i class="fas fa-globe"></i> Visit Website
-                </a>
-              </li>
-              <li>
-                <a href="https://www.google.com/maps/place/Southern+Luzon+State+University/@14.1126557,121.5585887,1103m/data=!3m2!1e3!4b1!4m6!3m5!1s0x33bd538ac62e0daf:0x8f0c8e2dcd66050d!8m2!3d14.1126505!4d121.5611636!16s%2Fm%2F02qfcg6?entry=ttu&g_ep=EgoyMDI1MDUwMy4wIKXMDSoASAFQAw%3D%3D">
-                    <i class="fas fa-map-marker-alt"></i> Quezon Avenue, Lucban, Philippines
-                </a>
-              </li>
-              <li class="copyable" onclick="copyToClipboard('(042) 540 6635')">
-                <i class="fas fa-phone-alt"></i> (042) 540 6635
-              </li>
-            </ul>
-          </div>
+
+            <div class="contact-info">
+                <h3 style="font-weight: bold;">Contact Us</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/slsuMain" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://mail.google.com/mail/u/0/">
+                            <i class="fas fa-envelope"></i> Gmail
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.slsu.edu.ph/" target="_blank">
+                            <i class="fas fa-globe"></i> Visit Website
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://www.google.com/maps/place/Southern+Luzon+State+University/@14.1126557,121.5585887,1103m/data=!3m2!1e3!4b1!4m6!3m5!1s0x33bd538ac62e0daf:0x8f0c8e2dcd66050d!8m2!3d14.1126505!4d121.5611636!16s%2Fm%2F02qfcg6?entry=ttu&g_ep=EgoyMDI1MDUwMy4wIKXMDSoASAFQAw%3D%3D">
+                            <i class="fas fa-map-marker-alt"></i> Quezon Avenue, Lucban, Philippines
+                        </a>
+                    </li>
+                    <li class="copyable" onclick="copyToClipboard('(042) 540 6635')">
+                        <i class="fas fa-phone-alt"></i> (042) 540 6635
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 SLSU - UNIMap. All Rights Reserved.</p>
         </div>
-      </footer>
-      
-    
-    <div class="side-panel">
-        <div class="side-panel-content">
-            <div class="about">
-                <img src="img/slsu-logo.webp" alt="SLSU Logo">
-                <h3>About</h3>
-            </div>
-            <div class="about-details">
-                <p>The Unified Control Mapping (UCM) System is a strategic initiative designed to enhance the
-                    University’s capacity
-                    for data-driven planning, resource management, and disaster preparedness. Using ArcGIS technology,
-                    the
-                    system consolidates key information on infrastructure, academic demographics, research and extension
-                    services,
-                    and environmental risks into one accessible platform.
-                    This initiative supports more efficient decision-making by providing up-to-date geospatial data for
-                    both management and external stakeholders. The system includes two major components: the UNIMap
-                    Portal,
-                    which is focused on internal planning and operations, and an interactive online map for public and
-                    client
-                    use. Together, these tools promote transparency, adaptability, and resilience across all University
-                    functions.
-                </p>
-                <br>
-                <p><strong>Led by:</strong></p>
-                <p>Center for Hazard and Environmental Resource Mapping (CHERM)</p>
-                <p>Planning and Development Office</p>
-                <p>MIS-ICT Office</p>                
+    </footer>
+
+    <div class="main-layout">
+        <div class="side-panel">
+            <div class="side-panel-content">
+                <div class="about">
+                    <img src="img/slsu-logo.webp" alt="SLSU Logo">
+                    <h3>About</h3>
+                </div>
+                <div class="about-details">
+                    <p>The Unified Control Mapping (UCM) System is a strategic initiative designed to enhance the
+                        University’s capacity
+                        for data-driven planning, resource management, and disaster preparedness. Using ArcGIS
+                        technology,
+                        the
+                        system consolidates key information on infrastructure, academic demographics, research and
+                        extension
+                        services,
+                        and environmental risks into one accessible platform.
+                        This initiative supports more efficient decision-making by providing up-to-date geospatial data
+                        for
+                        both management and external stakeholders. The system includes two major components: the UNIMap
+                        Portal,
+                        which is focused on internal planning and operations, and an interactive online map for public
+                        and
+                        client
+                        use. Together, these tools promote transparency, adaptability, and resilience across all
+                        University
+                        functions.
+                    </p>
+                    <br>
+                    <p><strong>Led by:</strong></p>
+                    <p>Center for Hazard and Environmental Resource Mapping (CHERM)</p>
+                    <p>Planning and Development Office</p>
+                    <p>MIS-ICT Office</p>
+                </div>
             </div>
         </div>
+
+        <div class="map-container">
+            <iframe id="campusMap" width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=14.1120879,121.5614933&output=embed">
+            </iframe>
+        </div>
+
     </div>
-
-    <div class="map-container">
-        <iframe id="campusMap" width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=14.1120879,121.5614933&output=embed">
-        </iframe>
-    </div>
-
-
-
-
 
     <div class="condition-button" id="conditionButton">
         <div class="conditions-wrapper">
@@ -431,12 +441,24 @@
     </div>
     <script src="js/main.js"></script>
     <script>
+        // Function to share the map
+        function shareMap() {
+            const shareURL = "https://www.google.com/maps?q=14.1120879,121.5614933";
+            navigator.clipboard.writeText(shareURL).then(() => {
+                alert("Map shareable link copied to clipboard: " + shareURL);
+            });
+        }
+
+        // COPYABLE PHONE NUMBER AT FOOTER
         function copyToClipboard(text) {
-        navigator.clipboard.writeText(text).then(() => {
-            alert("Phone number copied: " + text);
-        });
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Phone number copied: " + text);
+            });
         }
     </script>
+
+
+
 
 
 </body>
